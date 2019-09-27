@@ -1,0 +1,17 @@
+header{
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    color: #79862d; 
+    font-size: 150%;
+    font-weight: 500;
+}
+body {
+    border: #a7b943 solid 1px;
+    margin: 20px; 
+    height: 90%;
+    width: 140vh;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+}

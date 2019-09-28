@@ -1,0 +1,10 @@
+<div class="container">
+    <mat-list>
+        <mat-list-item class='single-msg' *ngFor="let message of messages$ | async">
+            <span class="author">{{ message.author | authorName | async }} : </span>
+            {{ message.text }}
+            <span class='messageCreated'>{{message.created.toDate()|date}}</span></mat-list-item>
+    </mat-list>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

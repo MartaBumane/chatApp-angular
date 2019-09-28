@@ -1,25 +1,11 @@
-
 <div *ngIf="uid$ | async; else loggedOut">
-        Hi, {{name$ | async}}!<button mat-button (click)="logout()">Log out</button>
-        <div class="container">
-          <mat-list>
-            <mat-list-item class='single-msg' *ngFor="let message of messages$ | async">
-              <span class="author">{{message.author}} : </span> 
-              {{message.text}}
-              <span class='messageCreated'>{{message.created.toDate()|date}}</span></mat-list-item>
-          </mat-list>
-          <mat-form-field>
-            <input [formControl]='textInput' matInput placeholder="message"(keyup.enter)="sendMessage()">
-            <button (click)="sendMessage()" mat-raised-button color="primary">Send</button>
-          </mat-form-field>
-          
-        </div>
-      </div>
-      <ng-template #loggedOut>
-        <mat-form-field>
-          <label for="username"> Enter username:</label>
-          <input #username type="text" id="username" placeholder="Username"(keyup.enter)="login(username.value)">
-        </mat-form-field>
-        <button mat-button (click)="login(username.value)">Login</button>
-      </ng-template>
-      <!-- <router-outlet></router-outlet> -->
+    Hi, {{name$ | async}}!<button mat-button (click)="logout()">Log out</button>
+</div>
+<ng-template #loggedOut>
+    <mat-form-field>
+        <label for="username"> Enter username:</label>
+        <input #username type="text" id="username" placeholder="Username" (keyup.enter)="login(username.value)">
+    </mat-form-field>
+    <button mat-button (click)="login(username.value)">Login</button>
+</ng-template>
+<!-- <router-outlet></router-outlet> -->

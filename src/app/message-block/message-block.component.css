@@ -1,0 +1,16 @@
+button{
+    margin: 5vh;
+}
+
+.single-msg:hover {    
+    border:solid 1px #2a2b2dff;
+}
+.author{
+    color: #d9514eff;
+    margin-right: 1%;
+}
+
+.messageCreated{
+    margin-left: 1%;
+    font-size: 70%
+}

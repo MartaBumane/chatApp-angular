@@ -3,9 +3,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { map, switchMap, filter, pluck, first } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormControl } from '@angular/forms';
-import { firestore } from 'firebase/app';
-
 
 @Component({
   selector: 'app-login',
@@ -23,8 +20,6 @@ export class LoginComponent implements OnInit {
     pluck('name')
   );
   
-  public messages$ = this.afs.collection('messages', ref => ref.orderBy('created', 'asc')).valueChanges();
-  public textInput = new FormControl('');
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -56,13 +51,5 @@ export class LoginComponent implements OnInit {
     await this.afs.doc(`users/${await this.uid$.pipe(first()).toPromise()}`).delete();
     this.afAuth.auth.signOut();
   }
-​
-  sendMessage() {
-    this.afs.collection('messages').add({
-      author: 'unknown',
-      text: this.textInput.value,
-      created: firestore.FieldValue.serverTimestamp()
-    });
-    this.textInput.setValue('');
-  }
+
 }

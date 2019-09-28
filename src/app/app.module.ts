@@ -14,11 +14,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
+import { MessageBlockComponent } from './message-block/message-block.component';
+import { MessageWritterComponent } from './message-writter/message-writter.component';
+import { AuthorNamePipe } from './author-name.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MessageBlockComponent,
+    MessageWritterComponent,
+    AuthorNamePipe
   ],
   imports: [
     BrowserModule,

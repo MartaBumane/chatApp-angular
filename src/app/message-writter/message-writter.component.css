@@ -1,3 +1,16 @@
 button{
     margin: 5vh;
+    right:10px;
+}
+
+.inputBlock{
+    background:white;
+    display:flex;
+    border: #2da8d8ff 1px solid;
+}
+
+.form{
+    padding-top:3vh;
+    padding-left: 3vh;
+    width: 65em;
 }

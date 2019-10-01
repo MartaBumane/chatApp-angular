@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { FormControl } from '@angular/forms';
 import { firestore } from 'firebase/app';
 import { ChatMessage} from '../chat-message';
@@ -24,12 +24,15 @@ export class MessageWritterComponent implements OnInit {
   async sendMessage() {
     if (this.textInput.value) {
       this.afs.collection<ChatMessage>('messages').add({
-        // author: this.afs.doc(`user/${await this.uid$.pipe(first()).toPromise()}`),
-        author: this.afs.doc(`users/${this.afAuth.auth.currentUser.uid}`).ref,
+        author: this.afAuth.auth.currentUser.uid,
         text: this.textInput.value,
         created: firestore.FieldValue.serverTimestamp() as any
       });
       this.textInput.setValue('');
     }
+  }
+
+  trackBy(_: number, msg:ChatMessage&{ref:DocumentReference}){
+    return msg.ref.id;
   }
 }

@@ -1,11 +1,13 @@
-<div *ngIf="uid$ | async; else loggedOut">
-    Hi, {{name$ | async}}!<button mat-button (click)="logout()">Log out</button>
+<div *ngIf="user.uid$ | async; else loggedOut">
+    Hi, {{user.name$ | async}}!
+    <button mat-button (click)="logout()">Log out</button>
+    <app-edit-name></app-edit-name>
 </div>
 <ng-template #loggedOut>
     <mat-form-field>
-        <label for="username"> Enter username:</label>
-        <input #username type="text" id="username" placeholder="Username" (keyup.enter)="login(username.value)">
+        <input matInput #username type="text" id="username" placeholder="Enter" (keyup.enter)="login(username.value)">
     </mat-form-field>
     <button mat-button (click)="login(username.value)">Login</button>
 </ng-template>
+
 <!-- <router-outlet></router-outlet> -->

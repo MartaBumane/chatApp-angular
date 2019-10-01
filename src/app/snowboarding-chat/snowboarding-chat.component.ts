@@ -6,12 +6,11 @@ import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
-  selector: 'app-message-block',
-  templateUrl: './message-block.component.html',
-  styleUrls: ['./message-block.component.css']
+  selector: 'app-snowboarding-chat',
+  templateUrl: './snowboarding-chat.component.html',
+  styleUrls: ['./snowboarding-chat.component.css']
 })
-export class MessageBlockComponent implements OnInit {
-
+export class SnowboardingChatComponent implements OnInit {
   public messages$ = this.afs.collection<ChatMessage>('messages', ref => ref.orderBy('created', 'asc')).snapshotChanges().pipe(
     map(snapshot =>
       snapshot.map(document =>

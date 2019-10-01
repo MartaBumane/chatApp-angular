@@ -17,6 +17,11 @@ import { LoginComponent } from './login/login.component';
 import { MessageBlockComponent } from './message-block/message-block.component';
 import { MessageWritterComponent } from './message-writter/message-writter.component';
 import { AuthorNamePipe } from './author-name.pipe';
+import { EditNameComponent } from './edit-name/edit-name.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { SnowboardingChatComponent } from './snowboarding-chat/snowboarding-chat.component';
+import { SkatingChatComponent } from './skating-chat/skating-chat.component';
+import { SurfingChatComponent } from './surfing-chat/surfing-chat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { AuthorNamePipe } from './author-name.pipe';
     LoginComponent,
     MessageBlockComponent,
     MessageWritterComponent,
-    AuthorNamePipe
+    AuthorNamePipe,
+    EditNameComponent,
+    RoomsComponent,
+    SnowboardingChatComponent,
+    SkatingChatComponent,
+    SurfingChatComponent
   ],
   imports: [
     BrowserModule,

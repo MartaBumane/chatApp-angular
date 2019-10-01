@@ -1,0 +1,14 @@
+.single-room:hover {    
+    background-color: #2a2b2dff;
+    color: white;
+}
+
+.single-room{
+    padding: 10%;
+    font-weight: 600;
+}
+
+#your-rooms{
+    padding: 10%;
+}
+

@@ -1,6 +1,6 @@
 <div class="inputBlock">
-    <mat-form-field>
+    <mat-form-field class="form">
         <input [formControl]='textInput' matInput placeholder="message" (keyup.enter)="sendMessage()">
-        <button (click)="sendMessage()" mat-raised-button color="primary">Send</button>
     </mat-form-field>
+    <button (click)="sendMessage()" mat-raised-button color="primary">Send</button>
 </div>

@@ -1,10 +1,12 @@
 <div class="container">
-    <mat-list>
-        <mat-list-item class='single-msg' *ngFor="let message of messages$ | async">
+    <mat-list *ngIf="isLoggedIn$ | async">
+        <mat-list-item class='single-msg' *ngFor="let message of messages$ | async; trackBy: trackBy">
             <span class="author">{{ message.author | authorName | async }} : </span>
             {{ message.text }}
-            <span class='messageCreated'>{{message.created.toDate()|date}}</span></mat-list-item>
+            <span class='messageCreated'>{{message.created.toDate()|date:'HH:mm'}}<button *ngIf='canIDelete(message)' (click)='delete(message)'>Delete</button></span>
+        </mat-list-item>
     </mat-list>
 </div>
+
 
 <!-- <router-outlet></router-outlet> -->

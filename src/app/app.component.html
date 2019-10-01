@@ -3,13 +3,24 @@
         <div id='login'>
             <app-login></app-login>
         </div>
-        <div class='message-block'>
-            <app-message-block></app-message-block>
+        <div>
+            <table class='table'>
+                <tr>
+                    <td class='message-block'>
+                        <a routerLink=""></a>
+                        <a routerLink="/snowboarding"></a>
+                        <a routerLink="/skating"></a>
+                        <a routerLink="/surfing"></a>
+                        <router-outlet></router-outlet>
+                    </td>
+                    <td class='rooms'>
+                        <app-rooms></app-rooms>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class='input'>
             <app-message-writter></app-message-writter>
         </div>
-
     </div>
-
 </body>
